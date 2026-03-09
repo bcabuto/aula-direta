@@ -20,7 +20,7 @@ export default function CursosPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Nossos Cursos</h1>
           <p className="text-white/80 text-lg max-w-2xl">
-            Escolha entre nossos cursos técnicos reconhecidos pelo MEC/SISTEC e comece sua nova carreira.
+            Escolha entre nossos cursos técnicos EAD e comece sua nova carreira.
           </p>
         </div>
       </section>

@@ -19,7 +19,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-white/70 text-sm leading-relaxed">
-              Construa sua trajetória profissional com cursos técnicos reconhecidos pelo MEC/SISTEC. Modalidade EAD com qualidade e praticidade.
+              Construa sua trajetória profissional com cursos técnicos EAD de qualidade. Modalidade a distância com praticidade e certificação.
             </p>
             <div className="flex gap-3 mt-4">
               <a href="#" className="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors" aria-label="Instagram">
@@ -88,11 +88,11 @@ export default function Footer() {
             <div className="flex items-center gap-4">
               <div className="bg-white/10 rounded-lg px-4 py-2 text-sm font-medium flex items-center gap-2">
                 <svg className="w-5 h-5 text-[#F5A623]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                Reconhecido pelo MEC
+                Certificação válida em todo o Brasil
               </div>
               <div className="bg-white/10 rounded-lg px-4 py-2 text-sm font-medium flex items-center gap-2">
                 <svg className="w-5 h-5 text-[#F5A623]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                Registrado no SISTEC
+                Ensino EAD de qualidade
               </div>
             </div>
             <p className="text-white/50 text-sm">

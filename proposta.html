@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proposta Comercial — Aula Direta</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    :root {
+      --blue: #1B3A6B;
+      --blue-light: #2a5298;
+      --orange: #F5A623;
+      --orange-dark: #e0950e;
+      --bg: #F5F7FA;
+      --white: #FFFFFF;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-300: #d1d5db;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+      --green: #10b981;
+      --green-bg: #ecfdf5;
+      --red: #ef4444;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--gray-700);
+      line-height: 1.7;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    @media print {
+      body { background: white; }
+      .page-break { page-break-before: always; }
+      .no-print { display: none !important; }
+      .container { box-shadow: none !important; }
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--white);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+
+    /* Cover */
+    .cover {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
+      color: white;
+      padding: 80px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 500px;
+      height: 500px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 50%;
+    }
+
+    .cover::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 400px;
+      height: 400px;
+      background: rgba(245,166,35,0.08);
+      border-radius: 50%;
+    }
+
+    .cover-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cover-logo-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cover-logo span:first-of-type { font-size: 28px; font-weight: 800; color: white; }
+    .cover-logo span:last-of-type { font-size: 28px; font-weight: 800; color: var(--orange); }
+
+    .cover h1 {
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cover .subtitle {
+      font-size: 20px;
+      color: rgba(255,255,255,0.7);
+      font-weight: 400;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cover-meta {
+      margin-top: 48px;
+      display: flex;
+      gap: 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cover-meta div {
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .cover-meta div strong {
+      display: block;
+      color: rgba(255,255,255,0.9);
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    /* Content */
+    .content {
+      padding: 60px;
+    }
+
+    .content h2 {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--blue);
+      margin-bottom: 8px;
+      padding-bottom: 12px;
+      border-bottom: 3px solid var(--orange);
+      display: inline-block;
+    }
+
+    .content h2 + p {
+      color: var(--gray-500);
+      margin-bottom: 32px;
+      margin-top: 8px;
+    }
+
+    .section {
+      margin-bottom: 48px;
+    }
+
+    /* Scenario cards */
+    .scenario {
+      border: 2px solid var(--gray-200);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 24px;
+      transition: border-color 0.2s;
+    }
+
+    .scenario.recommended {
+      border-color: var(--orange);
+      box-shadow: 0 4px 20px rgba(245,166,35,0.15);
+    }
+
+    .scenario-header {
+      padding: 28px 32px;
+      background: var(--gray-50);
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .scenario.recommended .scenario-header {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
+      border-bottom: none;
+    }
+
+    .scenario.recommended .scenario-header * {
+      color: white !important;
+    }
+
+    .scenario-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--orange);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 12px;
+    }
+
+    .scenario-header h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 4px;
+    }
+
+    .scenario-header p {
+      font-size: 14px;
+      color: var(--gray-500);
+    }
+
+    .scenario-price {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .scenario-price .value {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--blue);
+    }
+
+    .scenario.recommended .scenario-price .value {
+      color: var(--orange) !important;
+    }
+
+    .scenario-price .period {
+      font-size: 14px;
+      color: var(--gray-500);
+    }
+
+    .scenario-body {
+      padding: 28px 32px;
+    }
+
+    .scenario-body h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--gray-800);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--gray-600);
+      line-height: 1.5;
+    }
+
+    .feature-list li .check {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      background: var(--green-bg);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    .feature-list li .check svg {
+      width: 12px;
+      height: 12px;
+      color: var(--green);
+    }
+
+    .scenario-footer {
+      padding: 20px 32px;
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-200);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .scenario-footer .timeline {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      color: var(--gray-500);
+    }
+
+    .scenario-footer .timeline svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Payment table */
+    .payment-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 14px;
+    }
+
+    .payment-table th {
+      text-align: left;
+      padding: 10px 16px;
+      background: var(--blue);
+      color: white;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .payment-table th:first-child { border-radius: 8px 0 0 0; }
+    .payment-table th:last-child { border-radius: 0 8px 0 0; }
+
+    .payment-table td {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .payment-table tr:last-child td { border-bottom: none; }
+    .payment-table tr:nth-child(even) td { background: var(--gray-50); }
+
+    /* Comparison table */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin-top: 20px;
+    }
+
+    .comparison-table th {
+      padding: 14px 12px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .comparison-table th:first-child {
+      text-align: left;
+      width: 45%;
+    }
+
+    .comparison-table thead th {
+      background: var(--blue);
+      color: white;
+    }
+
+    .comparison-table thead th:first-child { border-radius: 8px 0 0 0; }
+    .comparison-table thead th:last-child { border-radius: 0 8px 0 0; }
+
+    .comparison-table thead th.highlight {
+      background: var(--orange);
+    }
+
+    .comparison-table td {
+      padding: 12px;
+      border-bottom: 1px solid var(--gray-100);
+      text-align: center;
+    }
+
+    .comparison-table td:first-child {
+      text-align: left;
+      font-weight: 500;
+      color: var(--gray-700);
+    }
+
+    .comparison-table tr:nth-child(even) td {
+      background: var(--gray-50);
+    }
+
+    .comparison-table .yes { color: var(--green); font-weight: 700; font-size: 16px; }
+    .comparison-table .no { color: var(--gray-300); font-size: 16px; }
+    .comparison-table .partial { color: var(--orange); font-size: 12px; font-weight: 600; }
+
+    .comparison-table tr.price-row td {
+      font-weight: 800;
+      font-size: 16px;
+      color: var(--blue);
+      background: var(--gray-100);
+      border-bottom: none;
+    }
+
+    .comparison-table tr.price-row td.highlight-price {
+      color: var(--orange);
+    }
+
+    /* Info boxes */
+    .info-box {
+      background: var(--gray-50);
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 20px;
+    }
+
+    .info-box h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--gray-800);
+      margin-bottom: 12px;
+    }
+
+    .info-box ul {
+      list-style: none;
+      font-size: 14px;
+      color: var(--gray-600);
+    }
+
+    .info-box ul li {
+      padding: 4px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .info-box ul li::before {
+      content: '•';
+      position: absolute;
+      left: 4px;
+      color: var(--orange);
+      font-weight: 700;
+    }
+
+    /* Tech badges */
+    .tech-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .tech-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gray-700);
+    }
+
+    .tech-badge .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    /* Maintenance table */
+    .maintenance-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 14px;
+    }
+
+    .maintenance-table th {
+      text-align: left;
+      padding: 12px 16px;
+      background: var(--blue);
+      color: white;
+      font-weight: 600;
+    }
+
+    .maintenance-table th:first-child { border-radius: 8px 0 0 0; }
+    .maintenance-table th:last-child { border-radius: 0 8px 0 0; }
+
+    .maintenance-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .maintenance-table tr:nth-child(even) td { background: var(--gray-50); }
+
+    /* CTA */
+    .cta-section {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
+      color: white;
+      padding: 48px 60px;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: 28px;
+      font-weight: 800;
+      color: white;
+      border: none;
+      margin-bottom: 12px;
+    }
+
+    .cta-section p {
+      color: rgba(255,255,255,0.7);
+      font-size: 16px;
+      margin-bottom: 32px;
+    }
+
+    .cta-steps {
+      display: flex;
+      gap: 24px;
+      text-align: left;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cta-step {
+      flex: 1;
+      display: flex;
+      gap: 12px;
+    }
+
+    .cta-step-number {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      background: var(--orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .cta-step-text {
+      font-size: 14px;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.5;
+    }
+
+    .cta-step-text strong {
+      display: block;
+      color: white;
+      margin-bottom: 2px;
+    }
+
+    /* Footer */
+    .doc-footer {
+      padding: 24px 60px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--gray-500);
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .validity {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FEF3C7;
+      color: #92400E;
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- CAPA -->
+    <div class="cover">
+      <div class="cover-logo">
+        <div class="cover-logo-icon">
+          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        </div>
+        <span>Aula</span><span>Direta</span>
+      </div>
+
+      <h1>Proposta Comercial</h1>
+      <p class="subtitle">Desenvolvimento de plataforma web para cursos técnicos EAD</p>
+
+      <div class="cover-meta">
+        <div>
+          <strong>Cliente</strong>
+          Aula Direta
+        </div>
+        <div>
+          <strong>Responsável</strong>
+          Bruno Cabuto
+        </div>
+        <div>
+          <strong>Data</strong>
+          08 de março de 2026
+        </div>
+      </div>
+    </div>
+
+    <!-- SOBRE O PROJETO -->
+    <div class="content">
+      <div class="section">
+        <h2>Sobre o Projeto</h2>
+        <p>Desenvolvimento de plataforma web profissional para a Aula Direta — empresa de cursos técnicos EAD.</p>
+        <p style="color: var(--gray-600); margin-top: 12px; font-size: 15px;">
+          O objetivo é criar uma presença digital moderna que apresente os cursos, transmita credibilidade e converta visitantes em alunos matriculados. A proposta está organizada em 3 cenários para que você escolha o que melhor atende o momento do negócio.
+        </p>
+      </div>
+
+      <!-- CENÁRIO 1 -->
+      <div class="section">
+        <h2>Cenários de Desenvolvimento</h2>
+        <p>Cada cenário é incremental — o seguinte inclui tudo do anterior, mais as funcionalidades adicionais.</p>
+
+        <div class="scenario">
+          <div class="scenario-header">
+            <h3>Cenário 1 — Site Institucional</h3>
+            <p>Site vitrine profissional com foco em captação de leads e apresentação dos cursos.</p>
+            <div class="scenario-price">
+              <span class="value">R$ 3.500</span>
+              <span class="period">• 2 a 3 semanas</span>
+            </div>
+          </div>
+          <div class="scenario-body">
+            <h4>O que está incluso</h4>
+            <ul class="feature-list">
+              <li><span class="check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>Página inicial com hero, diferenciais, cursos em destaque e depoimentos de alunos</li>
+              <li><span class="check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>Página "Sobre Nós" com história, missão, visão e valores</li>
+              <li><span class="check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>Catálogo de cursos com filtro por área e página de detalhe de cada curso</li>
+              <li><span class="check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>Página de FAQ (perguntas frequentes) e página de Contato com formulário funcional</li>
+              <li><span class="check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>Integração com WhatsApp (botão flutuante) e design 100% responsivo</li>
+              <li><span class="check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>SEO básico (meta tags, Open Graph, sitemap) + deploy em produção + domínio</li>
+            </ul>
+          </div>
+          <div class="scenario-footer">
+            <div class="timeline">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Prazo: 2 a 3 semanas
+            </div>
+            <table class="payment-table" style="width: auto; margin: 0;">
+              <tr><td style="border:none; padding: 2px 12px; font-size: 13px;">50% entrada</td><td style="border:none; padding: 2px 0; font-weight: 700; font-size: 13px;">R$ 1.750</td></tr>
+              <tr><td style="border:none; padding: 2px 12px; font-size: 13px;">50% entrega</td><td style="border:none; padding: 2px 0; font-weight: 700; font-size: 13px;">R$ 1.750</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- CENÁRIO 2 -->
+        <div class="scenario recommended">
+          <div class="scenario-header">
+            <div class="scenario-badge">⭐ Recomendado</div>
+            <h3>Cenário 2 — Site com Checkout e Pagamento Online</h3>
+            <p>Tudo do Cenário 1 + fluxo completo de matrícula com pagamento real integrado.</p>
+            <div class="scenario-price">
+              <span class="value">R$ 7.500</span>
+              <span class="period">• 4 a 6 semanas</span>
+            </div>
+          </div>
+          <div class="scenario-body">
+            <h4>Tudo do Cenário 1, mais:</h4>
+            <ul class="feature-list">
+              <li><span class="check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>Fluxo de matrícula em 3 etapas (dados pessoais → pagamento → confirmação)</li>
+              <li><span class="check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>Integração com gateway de pagamento: PIX com QR Code, cartão de crédito com parcelamento e boleto</li>
+              <li><span class="check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>Banco de dados para registro de matrículas com atualização automática de status</li>
+              <li><span class="check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>Emails transacionais automáticos (confirmação de matrícula, comprovante de pagamento)</li>
+              <li><span class="check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>Painel de gestão de cursos: criar, editar, ativar/desativar e excluir cursos de forma autônoma</li>
+              <li><span class="check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>Painel administrativo para visualizar matrículas, status de pagamento e exportar relatórios</li>
+            </ul>
+          </div>
+          <div class="scenario-footer">
+            <div class="timeline">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Prazo: 4 a 6 semanas
+            </div>
+            <table class="payment-table" style="width: auto; margin: 0;">
+              <tr><td style="border:none; padding: 2px 12px; font-size: 13px;">40% entrada</td><td style="border:none; padding: 2px 0; font-weight: 700; font-size: 13px;">R$ 3.000</td></tr>
+              <tr><td style="border:none; padding: 2px 12px; font-size: 13px;">30% checkout + painel</td><td style="border:none; padding: 2px 0; font-weight: 700; font-size: 13px;">R$ 2.250</td></tr>
+              <tr><td style="border:none; padding: 2px 12px; font-size: 13px;">30% entrega</td><td style="border:none; padding: 2px 0; font-weight: 700; font-size: 13px;">R$ 2.250</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- CENÁRIO 3 -->
+        <div class="scenario">
+          <div class="scenario-header">
+            <h3>Cenário 3 — Plataforma Completa com Área do Aluno</h3>
+            <p>Tudo do Cenário 2 + portal do aluno e painel administrativo completo.</p>
+            <div class="scenario-price">
+              <span class="value">R$ 15.000</span>
+              <span class="period">• 7 a 10 semanas</span>
+            </div>
+          </div>
+          <div class="scenario-body">
+            <h4>Tudo do Cenário 2, mais:</h4>
+            <ul class="feature-list">
+              <li><span class="check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><strong>Área do Aluno:</strong> Login seguro, dashboard "Meus Cursos", videoaulas por módulo, progresso de conclusão</li>
+              <li><span class="check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>Download de materiais complementares (PDFs, apostilas) e avaliações online por módulo</li>
+              <li><span class="check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>Emissão automática de certificado de conclusão em PDF + histórico de pagamentos</li>
+              <li><span class="check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><strong>Painel Admin completo:</strong> Gestão de cursos, alunos, videoaulas e financeiro</li>
+              <li><span class="check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>Dashboard com métricas (alunos ativos, receita, conversão) e envio de comunicados</li>
+            </ul>
+          </div>
+          <div class="scenario-footer">
+            <div class="timeline">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Prazo: 7 a 10 semanas
+            </div>
+            <table class="payment-table" style="width: auto; margin: 0;">
+              <tr><td style="border:none; padding: 2px 12px; font-size: 13px;">30% entrada</td><td style="border:none; padding: 2px 0; font-weight: 700; font-size: 13px;">R$ 4.500</td></tr>
+              <tr><td style="border:none; padding: 2px 12px; font-size: 13px;">25% área aluno</td><td style="border:none; padding: 2px 0; font-weight: 700; font-size: 13px;">R$ 3.750</td></tr>
+              <tr><td style="border:none; padding: 2px 12px; font-size: 13px;">25% painel admin</td><td style="border:none; padding: 2px 0; font-weight: 700; font-size: 13px;">R$ 3.750</td></tr>
+              <tr><td style="border:none; padding: 2px 12px; font-size: 13px;">20% entrega final</td><td style="border:none; padding: 2px 0; font-weight: 700; font-size: 13px;">R$ 3.000</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPARATIVO -->
+      <div class="section page-break">
+        <h2>Comparativo</h2>
+        <p>Veja lado a lado o que cada cenário oferece.</p>
+
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Funcionalidade</th>
+              <th>Cenário 1</th>
+              <th class="highlight">Cenário 2 ⭐</th>
+              <th>Cenário 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Site institucional completo</td>
+              <td><span class="yes">✓</span></td>
+              <td><span class="yes">✓</span></td>
+              <td><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Design responsivo + SEO</td>
+              <td><span class="yes">✓</span></td>
+              <td><span class="yes">✓</span></td>
+              <td><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Catálogo de cursos com detalhe</td>
+              <td><span class="yes">✓</span></td>
+              <td><span class="yes">✓</span></td>
+              <td><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Formulário de contato + WhatsApp</td>
+              <td><span class="yes">✓</span></td>
+              <td><span class="yes">✓</span></td>
+              <td><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Deploy + domínio personalizado</td>
+              <td><span class="yes">✓</span></td>
+              <td><span class="yes">✓</span></td>
+              <td><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Checkout com pagamento real</td>
+              <td><span class="no">—</span></td>
+              <td><span class="yes">✓</span></td>
+              <td><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>PIX, cartão e boleto</td>
+              <td><span class="no">—</span></td>
+              <td><span class="yes">✓</span></td>
+              <td><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Emails transacionais</td>
+              <td><span class="no">—</span></td>
+              <td><span class="yes">✓</span></td>
+              <td><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Gestão de cursos (adicionar, editar, remover)</td>
+              <td><span class="no">—</span></td>
+              <td><span class="yes">✓</span></td>
+              <td><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Painel administrativo</td>
+              <td><span class="no">—</span></td>
+              <td><span class="partial">Cursos + Matrículas</span></td>
+              <td><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Login e área do aluno</td>
+              <td><span class="no">—</span></td>
+              <td><span class="no">—</span></td>
+              <td><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Videoaulas e progresso</td>
+              <td><span class="no">—</span></td>
+              <td><span class="no">—</span></td>
+              <td><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Avaliações e certificados</td>
+              <td><span class="no">—</span></td>
+              <td><span class="no">—</span></td>
+              <td><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Dashboard com métricas</td>
+              <td><span class="no">—</span></td>
+              <td><span class="no">—</span></td>
+              <td><span class="yes">✓</span></td>
+            </tr>
+            <tr class="price-row">
+              <td><strong>Investimento</strong></td>
+              <td>R$ 3.500</td>
+              <td class="highlight-price">R$ 7.500</td>
+              <td>R$ 15.000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- TECNOLOGIAS -->
+      <div class="section">
+        <h2>Tecnologias</h2>
+        <p>Ferramentas modernas que garantem performance, segurança e escalabilidade.</p>
+
+        <div class="tech-badges">
+          <span class="tech-badge"><span class="dot" style="background:#000"></span>Next.js + React</span>
+          <span class="tech-badge"><span class="dot" style="background:#38bdf8"></span>Tailwind CSS</span>
+          <span class="tech-badge"><span class="dot" style="background:#3ecf8e"></span>Supabase</span>
+          <span class="tech-badge"><span class="dot" style="background:#635bff"></span>Gateway de Pagamento</span>
+          <span class="tech-badge"><span class="dot" style="background:#000"></span>Vercel</span>
+          <span class="tech-badge"><span class="dot" style="background:#0ea5e9"></span>Resend (emails)</span>
+        </div>
+      </div>
+
+      <!-- NÃO INCLUSO -->
+      <div class="section">
+        <h2>O que não está incluso</h2>
+        <p>Itens de responsabilidade do cliente ou contratados à parte.</p>
+
+        <div class="info-box">
+          <ul>
+            <li>Produção de conteúdo (textos dos cursos, videoaulas, fotos)</li>
+            <li>Registro de domínio (custo aproximado: R$ 40/ano)</li>
+            <li>Custos de hospedagem (Vercel — gratuito para projetos iniciais ou ~$20/mês no plano Pro)</li>
+            <li>Taxas do gateway de pagamento (definidas pelo provedor escolhido)</li>
+            <li>Manutenção mensal após entrega (pode ser contratada conforme tabela abaixo)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- MANUTENÇÃO -->
+      <div class="section">
+        <h2>Manutenção Mensal</h2>
+        <p>Planos opcionais para manter o site atualizado e funcionando após a entrega.</p>
+
+        <table class="maintenance-table">
+          <thead>
+            <tr>
+              <th>Plano</th>
+              <th>Inclui</th>
+              <th style="text-align: right;">Valor/mês</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Básico</strong></td>
+              <td>Correção de bugs e atualizações de segurança</td>
+              <td style="text-align: right; font-weight: 700;">R$ 300</td>
+            </tr>
+            <tr>
+              <td><strong>Intermediário</strong></td>
+              <td>Básico + pequenas alterações e melhorias de conteúdo</td>
+              <td style="text-align: right; font-weight: 700;">R$ 600</td>
+            </tr>
+            <tr>
+              <td><strong>Completo</strong></td>
+              <td>Intermediário + novas funcionalidades sob demanda</td>
+              <td style="text-align: right; font-weight: 700;">R$ 1.200</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="text-align: center; margin-bottom: 32px;">
+        <span class="validity">📅 Proposta válida por 30 dias a partir da data de emissão</span>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+      <h2>Próximos Passos</h2>
+      <p>Vamos transformar a Aula Direta em referência no mercado de cursos técnicos.</p>
+
+      <div class="cta-steps">
+        <div class="cta-step">
+          <div class="cta-step-number">1</div>
+          <div class="cta-step-text">
+            <strong>Escolha</strong>
+            Selecione o cenário ideal para o momento do negócio
+          </div>
+        </div>
+        <div class="cta-step">
+          <div class="cta-step-number">2</div>
+          <div class="cta-step-text">
+            <strong>Alinhamento</strong>
+            Reunião rápida para detalhes e contrato
+          </div>
+        </div>
+        <div class="cta-step">
+          <div class="cta-step-number">3</div>
+          <div class="cta-step-text">
+            <strong>Início</strong>
+            Pagamento da 1ª parcela e início do desenvolvimento
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="doc-footer">
+      <p><strong>Bruno Cabuto</strong> — Desenvolvimento Web</p>
+      <p>brucabuto@gmail.com • (11) 99476-3857 • (31) 99999-0000</p>
+    </div>
+
+  </div>
+
+</body>
+</html>

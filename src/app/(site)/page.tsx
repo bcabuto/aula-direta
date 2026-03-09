@@ -13,8 +13,8 @@ const differentials = [
   },
   {
     icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
-    title: "Reconhecido pelo MEC/SISTEC",
-    description: "Diploma com validade nacional, registrado no SISTEC e reconhecido pelo Ministério da Educação.",
+    title: "Certificação com Validade Nacional",
+    description: "Diploma válido em todo o Brasil, com formação técnica de qualidade e reconhecimento no mercado de trabalho.",
   },
   {
     icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6",
@@ -36,7 +36,7 @@ export default function Home() {
               <svg className="w-4 h-4 text-[#F5A623]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              Cursos reconhecidos pelo MEC/SISTEC
+              Cursos técnicos com certificação válida em todo o Brasil
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               Seu futuro começa com a{" "}
@@ -44,7 +44,7 @@ export default function Home() {
             </h1>
             <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed">
               Agora é a hora de investir em você. Construa sua trajetória profissional
-              com cursos técnicos EAD de qualidade e reconhecidos em todo o Brasil.
+              com cursos técnicos EAD de qualidade e certificação válida em todo o Brasil.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link

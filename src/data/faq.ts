@@ -5,8 +5,8 @@ export interface FaqItem {
 
 export const faqItems: FaqItem[] = [
   {
-    question: "Os cursos da Aula Direta são reconhecidos pelo MEC?",
-    answer: "Sim! Todos os nossos cursos técnicos são registrados no SISTEC (Sistema Nacional de Informações da Educação Profissional e Tecnológica) e reconhecidos pelo MEC, garantindo a validade do seu diploma em todo o território nacional.",
+    question: "Os cursos da Aula Direta possuem certificação válida?",
+    answer: "Sim! Todos os nossos cursos técnicos emitem diploma com validade em todo o território nacional, preparando você para o mercado de trabalho com uma formação de qualidade.",
   },
   {
     question: "Como funciona a modalidade EAD?",
@@ -14,7 +14,7 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: "Qual a duração dos cursos?",
-    answer: "A duração varia de acordo com o curso escolhido, de 12 a 24 meses. Cada curso possui uma carga horária específica que atende às exigências do MEC para a formação técnica.",
+    answer: "A duração varia de acordo com o curso escolhido, de 12 a 24 meses. Cada curso possui uma carga horária específica para garantir uma formação técnica completa.",
   },
   {
     question: "Preciso ter ensino médio completo para me matricular?",
@@ -34,7 +34,7 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: "O diploma tem validade nacional?",
-    answer: "Sim! O diploma emitido pela Aula Direta tem validade em todo o Brasil, pois nossos cursos são devidamente registrados no SISTEC/MEC. Você pode utilizá-lo para concursos públicos, progressão de carreira e atuação profissional.",
+    answer: "Sim! O diploma emitido pela Aula Direta tem validade em todo o Brasil. Você pode utilizá-lo para progressão de carreira e atuação profissional.",
   },
   {
     question: "Existe suporte ao aluno durante o curso?",
@@ -42,6 +42,6 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: "Recebo certificado ao concluir o curso?",
-    answer: "Sim! Ao concluir todas as disciplinas e o estágio (quando aplicável), você recebe o diploma de Técnico registrado no SISTEC, com validade nacional. O documento é enviado digitalmente e fisicamente para o endereço cadastrado.",
+    answer: "Sim! Ao concluir todas as disciplinas e o estágio (quando aplicável), você recebe o diploma de Técnico com validade nacional. O documento é enviado digitalmente e fisicamente para o endereço cadastrado.",
   },
 ];

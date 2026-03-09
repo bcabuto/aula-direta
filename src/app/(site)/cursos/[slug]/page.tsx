@@ -73,7 +73,7 @@ export default function CourseDetailPage() {
                 Matricule-se agora
               </Link>
               <p className="text-xs text-gray-400 text-center mt-3">
-                Reconhecido pelo MEC/SISTEC
+                Certificação válida em todo o Brasil
               </p>
             </div>
           </div>

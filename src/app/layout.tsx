@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Aula Direta - Cursos Técnicos EAD Reconhecidos pelo MEC",
-  description: "Construa sua trajetória profissional com cursos técnicos reconhecidos pelo MEC/SISTEC. Modalidade EAD com qualidade e praticidade.",
+  title: "Aula Direta - Cursos Técnicos EAD",
+  description: "Construa sua trajetória profissional com cursos técnicos EAD de qualidade. Modalidade a distância com praticidade e certificação.",
 };
 
 export default function RootLayout({
@@ -21,9 +19,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`${inter.className} antialiased bg-[#F5F7FA]`}>
-        <Header />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   );

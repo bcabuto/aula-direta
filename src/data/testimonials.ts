@@ -25,7 +25,7 @@ export const testimonials: Testimonial[] = [
     name: "Ana Beatriz Oliveira",
     course: "Técnico em Administração",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
-    text: "Escolhi a Aula Direta pela credibilidade do MEC/SISTEC e não me arrependi. O material é de qualidade e o suporte ao aluno é excepcional. Recomendo a todos!",
+    text: "Escolhi a Aula Direta pela credibilidade e qualidade do ensino e não me arrependi. O material é excelente e o suporte ao aluno é excepcional. Recomendo a todos!",
     rating: 5,
   },
   {

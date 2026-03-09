@@ -7,7 +7,7 @@ const values = [
 ];
 
 const whyUs = [
-  { title: "Certificação MEC/SISTEC", description: "Todos os cursos possuem registro no SISTEC, garantindo a validade nacional do seu diploma." },
+  { title: "Certificação com Validade Nacional", description: "Todos os cursos emitem diploma com validade em todo o território nacional." },
   { title: "Plataforma Moderna", description: "Ambiente virtual de aprendizagem intuitivo, com videoaulas, materiais e avaliações online." },
   { title: "Suporte ao Aluno", description: "Equipe dedicada para tirar dúvidas e acompanhar sua jornada de aprendizado." },
   { title: "Preços Acessíveis", description: "Parcelas que cabem no seu bolso, com opções de pagamento via PIX, cartão e boleto." },
@@ -47,7 +47,7 @@ export default function SobrePage() {
                 </p>
                 <p>
                   Hoje, já impactamos a vida de mais de 5.000 alunos em todo o Brasil, com cursos nas áreas de
-                  Saúde, Tecnologia, Gestão e Educação — todos reconhecidos pelo MEC e registrados no SISTEC.
+                  Saúde, Tecnologia, Gestão e Educação — todos com certificação válida em todo o território nacional.
                 </p>
               </div>
             </div>

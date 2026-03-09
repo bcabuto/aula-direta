@@ -29,7 +29,7 @@ export const courses: Course[] = [
     installments: 24,
     installmentPrice: 150,
     image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&h=400&fit=crop",
-    shortDescription: "Forme-se para atuar em hospitais, clínicas e postos de saúde com certificação reconhecida pelo MEC.",
+    shortDescription: "Forme-se para atuar em hospitais, clínicas e postos de saúde com certificação válida em todo o Brasil.",
     description: "O curso Técnico em Enfermagem da Aula Direta prepara profissionais para atuar em diversas áreas da saúde, com conhecimentos teóricos e práticos essenciais para o cuidado ao paciente. Com metodologia EAD moderna e estágio supervisionado, você estará pronto para o mercado de trabalho.",
     targetAudience: "Pessoas com ensino médio completo que desejam ingressar na área da saúde.",
     jobMarket: "O mercado para técnicos em enfermagem está em constante crescimento, com demanda em hospitais, clínicas, UBS, home care e laboratórios.",
